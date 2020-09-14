@@ -20,9 +20,20 @@ export class EmployeeList extends Component {
   }
   
   render() {
+
+    let employeeList = this.state.employees.map((employee) => {
+      return (
+      <li 
+      data-cy="list"
+      key={employee.id}
+      >
+        {`${employee.first_name} ${employee.last_name}`}
+      </li>
+      )
+    })
     return (
-      <div>
-        
+      <div data-cy="main-container">
+        <ul>{employeeList}</ul>
       </div>
     )
   }
